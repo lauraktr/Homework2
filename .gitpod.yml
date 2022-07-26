@@ -1,17 +1,11 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-    - init: >  
-	python3 -m venv env
-	source env/bin/activate
-      command: >
-	python3 -m venv env
-	source env/bin/activate
-    - init: >
-          gp open README.md;
-          pip install -r "requirements.txt";
-      command: >
-          gp open README.md;
-          pip install -r "requirements.txt";
+  - name: creat venv
+    init: python3 -m venv env
+  - name: activate venv
+    init: source env/bin/activate
+  - name: Install requirements
+    init: pip install -r requirements.txt
 vscode:
     extensions:
         - ms-toolsai.jupyter
